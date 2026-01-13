@@ -8,17 +8,31 @@ import { getAll, get5First, getRedGoods } from './api/goods';
 
 export const App: React.FC = () => {
   const [goods, setGoods] = useState<Good[]>([]);
-  
+
   const loadAllGoods = () => {
-    getAll().then(setGoods)
+    getAll()
+      .then(setGoods)
+      .catch(() => {
+        setGoods([])
+      });
   };
+
   const loadFiveGoods = () => {
-    get5First().then(setGoods)
+    get5First()
+      .then(setGoods)
+      .catch(() => {
+        setGoods([])
+      });
   };
+
   const loadRedGoods = () => {
-    getRedGoods().then(setGoods);
+    getRedGoods()
+      .then(setGoods)
+      .catch(() => {
+        setGoods([])
+      });
   };
-  
+
   return (
     <div className="App">
       <h1>Dynamic list of Goods</h1>
@@ -37,5 +51,5 @@ export const App: React.FC = () => {
 
       <GoodsList goods={goods} />
     </div>
-  )
+  );
 };
