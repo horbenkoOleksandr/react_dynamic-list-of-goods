@@ -13,7 +13,7 @@ export const App: React.FC = () => {
     getAll()
       .then(setGoods)
       .catch(() => {
-        setGoods([])
+        setGoods([]);
       });
   };
 
@@ -21,7 +21,7 @@ export const App: React.FC = () => {
     get5First()
       .then(setGoods)
       .catch(() => {
-        setGoods([])
+        setGoods([]);
       });
   };
 
@@ -29,7 +29,7 @@ export const App: React.FC = () => {
     getRedGoods()
       .then(setGoods)
       .catch(() => {
-        setGoods([])
+        setGoods([]);
       });
   };
 
